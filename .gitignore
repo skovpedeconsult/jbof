@@ -1,3 +1,6 @@
 bin/
 obj/
 Source/packages/
+*.suo
+*.mdf
+*.ldf

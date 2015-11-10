@@ -21,7 +21,8 @@ namespace SampleJBOFWebApp.Controllers
         {
             if (!fileExtension.IsMatch(url)) url = url + "index.html";
             string path = HostingEnvironment.MapPath("~/App_Data/html/" + url);
-            try {
+            try
+            {
                 IHtmlDocument parsed;
                 using (var fs = System.IO.File.OpenRead(path)) parsed = await _parser.ParseAsync(fs);
                 IElement siteTitle = parsed.QuerySelector(".site-title");
@@ -32,6 +33,12 @@ namespace SampleJBOFWebApp.Controllers
             {
                 throw new HttpException(404, "Not found");
             }
+        }
+
+        public Task<ActionResult> Premium(string url = "")
+        {
+            //Do stuff for the premium area here.
+            return null;
         }
 
     }
